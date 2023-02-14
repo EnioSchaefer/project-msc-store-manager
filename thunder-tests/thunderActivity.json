@@ -152,5 +152,24 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "1ea3b2f1-d9bc-4d3d-b15b-09a79d750012",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/",
+    "url": "localhost:3000/products/",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-02-14T19:40:13.853Z",
+    "modified": "2023-02-14T19:40:13.853Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Demonhera dum missil\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
