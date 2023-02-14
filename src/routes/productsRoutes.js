@@ -1,4 +1,5 @@
 const express = require('express');
+const validateName = require('../middlewares/validateName');
 const { findAll, findById, insertProduct } = require('../models/products.model');
 
 const router = express.Router();
@@ -17,7 +18,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', validateName, async (req, res) => {
   try {
     const { name } = req.body;
 
