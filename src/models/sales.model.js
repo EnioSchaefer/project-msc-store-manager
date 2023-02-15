@@ -18,14 +18,29 @@ const insertSales = async (sales) => {
 
 const getAllSales = async () => {
   const [results] = await connection.execute(
-    `SELECT sp.sale_id, sp.product_id, sp.quantity, s.date 
-    FROM sales_products AS sp LEFT JOIN sales AS s ON s.id = sp.sale_id`,
+    `SELECT sp.sale_id, sp.product_id, sp.quantity, s.date FROM sales_products AS sp
+    LEFT JOIN sales AS s ON s.id = sp.sale_id ORDER BY sp.sale_id, sp.product_id`,
   );
 
+  return camelize(results);
+};
+
+const getSaleById = async (saleId) => {
+  const [results] = await connection.execute(
+    `SELECT s.date, sp.product_id, sp.quantity 
+    FROM sales_products AS sp
+    LEFT JOIN sales AS s ON s.id = sp.sale_id 
+    WHERE sp.sale_id = ?
+    ORDER BY sp.sale_id, sp.product_id`,
+    [saleId],
+  );
+
+  console.log(results);
   return camelize(results);
 };
 
 module.exports = {
   insertSales,
   getAllSales,
+  getSaleById,
 };

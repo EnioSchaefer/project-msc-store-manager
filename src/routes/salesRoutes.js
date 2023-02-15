@@ -1,7 +1,8 @@
 const express = require('express');
 const validateProductId = require('../middlewares/validateProductId');
 const validateProductQuantity = require('../middlewares/validateProductQuantity');
-const { insertSales, getAllSales } = require('../models/sales.model');
+const validateSaleId = require('../middlewares/validateSaleId');
+const { insertSales, getAllSales, getSaleById } = require('../models/sales.model');
 
 const router = express.Router();
 
@@ -23,6 +24,18 @@ router.get('/', async (_req, res) => {
     const allSales = await getAllSales();
 
     return res.status(200).json(allSales);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.get('/:id', validateSaleId, async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const sale = await getSaleById(Number(id));
+
+    return res.status(200).json(sale);
   } catch (err) {
     console.log(err);
   }
