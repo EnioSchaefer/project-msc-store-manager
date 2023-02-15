@@ -1,9 +1,11 @@
 const express = require('express');
+const validateProductId = require('../middlewares/validateProductId');
+const validateProductQuantity = require('../middlewares/validateProductQuantity');
 const { insertSales } = require('../models/sales.model');
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/', validateProductQuantity, validateProductId, async (req, res) => {
   try {
     const sales = req.body;
     const id = await insertSales(sales);
