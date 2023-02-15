@@ -1,7 +1,8 @@
 const express = require('express');
 const validateName = require('../middlewares/validateName');
-const validateUpdateId = require('../middlewares/validateUpdateId');
-const { findAll, findById, insertProduct, updateProductName } = require('../models/products.model');
+const validateSingleProductId = require('../middlewares/validateSingleProductId');
+const { findAll, findById, insertProduct,
+  updateProductName, deleteProduct } = require('../models/products.model');
 
 const router = express.Router();
 
@@ -31,7 +32,7 @@ router.post('/', validateName, async (req, res) => {
   }
 });
 
-router.put('/:id', validateName, validateUpdateId, async (req, res) => {
+router.put('/:id', validateName, validateSingleProductId, async (req, res) => {
   try {
     const { name } = req.body;
     const { id } = req.params;
@@ -39,6 +40,18 @@ router.put('/:id', validateName, validateUpdateId, async (req, res) => {
     await updateProductName(Number(id), name);
 
     return res.status(200).json({ id, name });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.delete('/:id', validateSingleProductId, async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    await deleteProduct(Number(id));
+
+    return res.status(204).end();
   } catch (err) {
     console.log(err);
   }
