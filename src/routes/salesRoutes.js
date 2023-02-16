@@ -54,18 +54,18 @@ router.delete('/:id', validateSaleId, async (req, res) => {
   }
 });
 
-router.put('/:id', validateSaleId, validateSaleId, validateProductId, async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { updatingSales } = req.body;
+router.put('/:id', validateSaleId, validateSaleId, validateProductId,
+  validateProductQuantity, async (req, res) => {
+    try {
+      const { id } = req.params;
+      const updatingSales = req.body;
 
-    console.log([id, updatingSales]);
-    const updatedSales = await updateSale(Number(id), updatingSales);
+      const updatedSales = await updateSale(Number(id), updatingSales);
 
-    return res.status(200).json({ saleId: Number(id), itemsUpdated: updatedSales });
-  } catch (err) {
-    console.log(err);
-  }
-});
+      return res.status(200).json({ saleId: Number(id), itemsUpdated: updatedSales });
+    } catch (err) {
+      console.log(err);
+    }
+  });
 
 module.exports = router;

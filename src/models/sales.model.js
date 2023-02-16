@@ -53,7 +53,7 @@ const deleteSale = async (saleId) => {
 };
 
 const updateSale = async (saleId, updatingSale) => {
-  updatingSale.forEach((sale) =>
+  updatingSale.forEach(async (sale) =>
     connection.execute(
       'UPDATE sales_products SET quantity = ? WHERE product_id = ? AND sale_id = ?',
       [sale.quantity, sale.productId, saleId],
