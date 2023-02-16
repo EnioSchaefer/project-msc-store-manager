@@ -1,44 +1,204 @@
 [
   {
-    "_id": "17b16894-4216-468c-b756-d9e3b5d062dd",
+    "_id": "c0986d2a-6fe8-45f6-a3bc-45b03f3acb3f",
     "colId": "history",
     "containerId": "",
-    "name": "localhost:3000/sales/",
-    "url": "localhost:3000/sales/",
+    "name": "localhost:3000/products/search?q=",
+    "url": "localhost:3000/products/search?q=",
     "method": "GET",
     "sortNum": 0,
-    "created": "2023-02-15T17:27:43.788Z",
-    "modified": "2023-02-15T17:27:43.788Z",
+    "created": "2023-02-16T15:28:16.396Z",
+    "modified": "2023-02-16T15:28:16.396Z",
     "headers": [],
-    "params": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "",
+        "isPath": false
+      }
+    ],
     "tests": []
   },
   {
-    "_id": "310d334f-46cf-4a81-bc3f-d33c8b44ec41",
+    "_id": "71955712-4ae0-4014-9630-e05c5fb84d8d",
     "colId": "history",
     "containerId": "",
-    "name": "localhost:3000/sales/2",
-    "url": "localhost:3000/sales/2",
+    "name": "localhost:3000/products/search?q=Thor",
+    "url": "localhost:3000/products/search?q=Thor",
     "method": "GET",
     "sortNum": 0,
-    "created": "2023-02-15T18:04:15.514Z",
-    "modified": "2023-02-15T18:04:15.514Z",
+    "created": "2023-02-16T15:28:28.293Z",
+    "modified": "2023-02-16T15:28:28.293Z",
     "headers": [],
-    "params": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "Thor",
+        "isPath": false
+      }
+    ],
     "tests": []
   },
   {
-    "_id": "584d5f0c-f82c-4983-a4e5-56d5fb8edc1e",
+    "_id": "37058570-3be9-466d-be2a-e6e8430b26f7",
     "colId": "history",
     "containerId": "",
-    "name": "localhost:3000/sales/1",
-    "url": "localhost:3000/sales/1",
+    "name": "localhost:3000/products/",
+    "url": "localhost:3000/products/",
     "method": "GET",
     "sortNum": 0,
-    "created": "2023-02-15T18:06:42.370Z",
-    "modified": "2023-02-15T18:06:42.370Z",
+    "created": "2023-02-16T15:29:46.131Z",
+    "modified": "2023-02-16T15:32:10.596Z",
     "headers": [],
-    "params": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "Traje",
+        "isDisabled": true,
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "16c6211f-ccb3-4241-a4e5-869ec3deac96",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/search",
+    "url": "localhost:3000/products/search",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-16T15:29:53.945Z",
+    "modified": "2023-02-16T15:29:53.945Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "Thor",
+        "isDisabled": true,
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "cb5abf68-340e-4e14-a1e2-62f459c8df5f",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/?q=%%",
+    "url": "localhost:3000/products/?q=%%",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-16T15:30:07.891Z",
+    "modified": "2023-02-16T15:30:07.891Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "%%",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "54bd5ec3-356e-49b6-88c4-cd90b406ae44",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/?q=Thor",
+    "url": "localhost:3000/products/?q=Thor",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-16T15:30:51.463Z",
+    "modified": "2023-02-16T15:30:51.463Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "Thor",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "195cef6b-15e8-4331-9a5f-ed756c44fcc6",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/?q=",
+    "url": "localhost:3000/products/?q=",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-16T15:31:12.633Z",
+    "modified": "2023-02-16T15:31:12.633Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "98daf252-40a5-4a84-80b1-ae2d25517bc8",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/?q=Traje",
+    "url": "localhost:3000/products/?q=Traje",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-16T15:31:17.096Z",
+    "modified": "2023-02-16T15:31:17.096Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "Traje",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "3b524236-2d77-40a6-ab4d-6f402bb2ad7e",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/search?q=Traje",
+    "url": "localhost:3000/products/search?q=Traje",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-16T15:32:35.395Z",
+    "modified": "2023-02-16T15:32:35.395Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "Traje",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "e68ca05e-4d0f-4f53-a32a-6a6e265ce03a",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/search?q=mart",
+    "url": "localhost:3000/products/search?q=mart",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2023-02-16T15:35:12.801Z",
+    "modified": "2023-02-16T15:35:12.801Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "mart",
+        "isPath": false
+      }
+    ],
     "tests": []
   }
 ]

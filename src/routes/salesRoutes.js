@@ -2,7 +2,8 @@ const express = require('express');
 const validateProductId = require('../middlewares/validateProductId');
 const validateProductQuantity = require('../middlewares/validateProductQuantity');
 const validateSaleId = require('../middlewares/validateSaleId');
-const { insertSales, getAllSales, getSaleById, deleteSale } = require('../models/sales.model');
+const { insertSales, getAllSales, getSaleById,
+  deleteSale, updateSale } = require('../models/sales.model');
 
 const router = express.Router();
 
@@ -48,6 +49,20 @@ router.delete('/:id', validateSaleId, async (req, res) => {
     await deleteSale(Number(id));
 
     return res.status(204).end();
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.put('/:id', validateSaleId, validateSaleId, validateProductId, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { updatingSales } = req.body;
+
+    console.log([id, updatingSales]);
+    const updatedSales = await updateSale(Number(id), updatingSales);
+
+    return res.status(200).json({ saleId: Number(id), itemsUpdated: updatedSales });
   } catch (err) {
     console.log(err);
   }

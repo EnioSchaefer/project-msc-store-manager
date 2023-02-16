@@ -2,9 +2,24 @@ const express = require('express');
 const validateName = require('../middlewares/validateName');
 const validateSingleProductId = require('../middlewares/validateSingleProductId');
 const { findAll, findById, insertProduct,
-  updateProductName, deleteProduct } = require('../models/products.model');
+  updateProductName, deleteProduct, searchProducts } = require('../models/products.model');
 
 const router = express.Router();
+
+router.get('/search', async (req, res) => {
+  try {
+    const { q } = req.query;
+    console.log(q);
+
+    const searchQuery = q.length > 0 ? `%${q}%` : '%%';
+
+    const searchedProduct = await searchProducts(searchQuery);
+
+    return res.status(200).json(searchedProduct);
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 router.get('/', async (_req, res) => res.status(200).json(await findAll()));
 
@@ -13,6 +28,7 @@ router.get('/:id', async (req, res) => {
     const { id } = req.params;
 
     const result = await findById(id);
+
     if (result) return res.status(200).json(result);
     return res.status(404).json({ message: 'Product not found' });
   } catch (err) {
