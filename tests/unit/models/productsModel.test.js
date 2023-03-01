@@ -3,7 +3,7 @@ const sinon = require('sinon');
 const connection = require('../../../src/models/connection');
 
 const { productsModel } = require('../../../src/models');
-const { products } = require('./mocks/products.model.mock');
+const products = require('./mocks/products.model.mock');
 
 describe('Testa a camada Model', () => {
 
