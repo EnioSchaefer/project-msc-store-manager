@@ -6,5 +6,6 @@ module.exports = async function getSalesIds() {
   );
 
   const ids = rawIds.map((id) => id.id);
+
   return ids;
 };
