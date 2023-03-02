@@ -34,11 +34,11 @@ const insertSales = async (sales) => {
 const updateSales = async (saleId, updatingSale) => {
   const saleIdValidation = await validateSaleId(saleId);
   const productIdValidation = await validateProductId(updatingSale);
-  const productQUantityValidation = await validateProductQuantity(updatingSale);
+  const productQuantityValidation = await validateProductQuantity(updatingSale);
 
   if (saleIdValidation.type) return saleIdValidation;
   if (productIdValidation.type) return productIdValidation;
-  if (productQUantityValidation.type) return productQUantityValidation;
+  if (productQuantityValidation.type) return productQuantityValidation;
 
   const updatedSales = await salesModel.updateSales(saleId, updatingSale);
 

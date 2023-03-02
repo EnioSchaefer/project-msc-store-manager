@@ -5,7 +5,7 @@ const connection = require('../../../src/models/connection');
 const { salesModel } = require('../../../src/models');
 const { sales, saleById } = require('./mocks/sales.model.mock');
 
-describe('Testa a camada Model', () => {
+describe('Testa a camada model das vendas', function () {
 
   const salesToUpdate = [
     {
